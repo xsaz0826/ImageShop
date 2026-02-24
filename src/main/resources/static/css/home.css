@@ -1,0 +1,245 @@
+@charset "UTF-8";
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap')
+	;
+
+:root {
+	--pink: #FF85A2;
+	--pink-dark: #E8607F;
+	--pink-deep: #C94B6A;
+	--pink-soft: #FFD6E0;
+	--pink-pale: #FFF0F4;
+	--pink-bg: #FFF5F8;
+	--pink-border: #FFDAE3;
+	--pink-grad: linear-gradient(135deg, #FF758C 0%, #FF9BB5 100%);
+	--text: #3D2B35;
+	--text-sub: #997B87;
+	--text-light: #C4A8B5;
+	--white: #FFFFFF;
+	--t: 0.2s ease;
+}
+
+/* ─── Reset & Base ─── */
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Noto Sans KR', -apple-system, sans-serif;
+	background: var(--pink-bg);
+	background-image: radial-gradient(circle at 10% 10%, rgba(255, 133, 162, 0.1)
+		0%, transparent 45%),
+		radial-gradient(circle at 90% 85%, rgba(255, 182, 193, 0.12) 0%,
+		transparent 45%);
+	color: var(--text);
+	font-size: 14px;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+}
+
+a {
+	text-decoration: none !important;
+	transition: color var(--t);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════════════════════ */
+body>div[align="center"]:first-of-type {
+	background: var(--pink-grad);
+	padding: 0 32px;
+	margin: 0;
+	max-width: 100%;
+	box-shadow: 0 4px 20px rgba(255, 117, 140, 0.25);
+}
+
+body>div[align="center"]:first-of-type table {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	border: none !important;
+	background: transparent;
+	border-collapse: collapse;
+}
+
+body>div[align="center"]:first-of-type table tr {
+	background: transparent !important;
+}
+
+body>div[align="center"]:first-of-type table td {
+	padding: 16px 8px !important;
+	border: none !important;
+	background: transparent !important;
+	box-shadow: none !important;
+}
+
+body>div[align="center"]:first-of-type table td a {
+	color: rgba(255, 255, 255, 0.9) !important;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 6px 14px;
+	border-radius: 20px;
+	border: 1.5px solid rgba(255, 255, 255, 0.4);
+	transition: all var(--t);
+	display: inline-block;
+}
+
+body>div[align="center"]:first-of-type table td a:hover {
+	background: rgba(255, 255, 255, 0.2);
+	color: #fff !important;
+	border-color: rgba(255, 255, 255, 0.7);
+}
+
+body>div[align="center"]:first-of-type+hr {
+	display: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MENU
+   ═══════════════════════════════════════════════════════════ */
+div[align="right"] {
+	background: rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur(8px);
+	padding: 10px 32px;
+	border-bottom: 1px solid var(--pink-border);
+	margin: 0;
+}
+
+div[align="right"] table {
+	margin-left: auto;
+	border: none !important;
+	background: transparent;
+	border-collapse: collapse;
+}
+
+div[align="right"] table tr {
+	background: transparent !important;
+}
+
+div[align="right"] table td {
+	padding: 4px 4px !important;
+	border: none !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	vertical-align: middle;
+}
+
+div[align="right"] table td a {
+	color: var(--pink-dark) !important;
+	font-size: 13px;
+	font-weight: 600;
+	padding: 6px 14px;
+	border-radius: 20px;
+	border: 1.5px solid var(--pink-soft);
+	background: var(--white);
+	display: inline-block;
+	transition: all var(--t);
+	white-space: nowrap;
+}
+
+div[align="right"] table td a:hover {
+	background: var(--pink-grad);
+	color: #fff !important;
+	border-color: transparent;
+	box-shadow: 0 4px 12px rgba(255, 117, 140, 0.3);
+	transform: translateY(-1px);
+}
+
+div[align="right"]+hr {
+	display: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HOME 메인 콘텐츠
+   ═══════════════════════════════════════════════════════════ */
+body>div[align="center"]:not(:first-of-type) {
+	max-width: 700px;
+	margin: 80px auto 60px;
+	padding: 60px 48px;
+	text-align: center;
+	background: var(--white);
+	border-radius: 28px;
+	border: 1px solid var(--pink-border);
+	box-shadow: 0 8px 40px rgba(255, 133, 162, 0.13);
+	position: relative;
+	overflow: hidden;
+}
+
+/* 배경 장식 */
+body>div[align="center"]:not(:first-of-type)::before {
+	content: '';
+	position: absolute;
+	top: -60px;
+	right: -60px;
+	width: 200px;
+	height: 200px;
+	background: radial-gradient(circle, rgba(255, 133, 162, 0.12) 0%,
+		transparent 70%);
+	border-radius: 50%;
+	pointer-events: none;
+}
+
+body>div[align="center"]:not(:first-of-type)::after {
+	content: '';
+	position: absolute;
+	bottom: -40px;
+	left: -40px;
+	width: 160px;
+	height: 160px;
+	background: radial-gradient(circle, rgba(255, 182, 193, 0.15) 0%,
+		transparent 70%);
+	border-radius: 50%;
+	pointer-events: none;
+}
+
+/* h1 타이틀 */
+body>div[align="center"]:not(:first-of-type)>h1 {
+	font-size: 28px;
+	font-weight: 700;
+	color: var(--pink-dark);
+	letter-spacing: -0.5px;
+	margin-bottom: 20px;
+	line-height: 1.4;
+}
+
+body>div[align="center"]:not(:first-of-type)>h1::before {
+	content: '🌸 ';
+}
+
+body>div[align="center"]:not(:first-of-type)>h1::after {
+	content: ' 🌸';
+}
+
+/* 서버 시간 */
+body>div[align="center"]:not(:first-of-type)>p {
+	font-size: 13px;
+	color: var(--text-light);
+	margin-top: 8px;
+	letter-spacing: 0.03em;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════ */
+body>div:last-of-type {
+	text-align: center;
+	padding: 28px;
+	color: var(--text-light);
+	font-size: 12px;
+	margin-top: 40px;
+	border-top: 1px solid var(--pink-border);
+}
+
+/* ─── 반응형 ─── */
+@media ( max-width : 768px) {
+	body>div[align="center"]:not(:first-of-type) {
+		margin: 32px 16px;
+		padding: 40px 24px;
+	}
+	div[align="right"] {
+		padding: 10px 16px;
+	}
+}

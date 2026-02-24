@@ -1,0 +1,443 @@
+@charset "UTF-8";
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap')
+	;
+
+:root {
+	--pink: #FF85A2;
+	--pink-dark: #E8607F;
+	--pink-deep: #C94B6A;
+	--pink-soft: #FFD6E0;
+	--pink-pale: #FFF0F4;
+	--pink-bg: #FFF5F8;
+	--pink-border: #FFDAE3;
+	--pink-grad: linear-gradient(135deg, #FF758C 0%, #FF9BB5 100%);
+	--text: #3D2B35;
+	--text-sub: #997B87;
+	--text-light: #C4A8B5;
+	--white: #FFFFFF;
+	--t: 0.2s ease;
+}
+
+/* ─── Reset & Base ─── */
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Noto Sans KR', -apple-system, sans-serif;
+	background: var(--pink-bg);
+	background-image: radial-gradient(circle at 10% 10%, rgba(255, 133, 162, 0.1)
+		0%, transparent 45%),
+		radial-gradient(circle at 90% 85%, rgba(255, 182, 193, 0.12) 0%,
+		transparent 45%);
+	color: var(--text);
+	font-size: 14px;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+}
+
+a {
+	text-decoration: none !important;
+	transition: color var(--t);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HEADER.JSP  →  div[align="center"] + table (홈 링크)
+   ═══════════════════════════════════════════════════════════ */
+
+/* 헤더 전체 배경 */
+body>div[align="center"]:first-of-type {
+	background: var(--pink-grad);
+	padding: 0 32px;
+	margin: 0;
+	max-width: 100%;
+	box-shadow: 0 4px 20px rgba(255, 117, 140, 0.25);
+}
+
+/* 헤더 테이블 */
+body>div[align="center"]:first-of-type table {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	border: none !important;
+	background: transparent;
+	border-collapse: collapse;
+}
+
+body>div[align="center"]:first-of-type table tr {
+	background: transparent !important;
+}
+
+body>div[align="center"]:first-of-type table td {
+	padding: 16px 8px !important;
+	border: none !important;
+	background: transparent !important;
+	box-shadow: none !important;
+}
+
+/* 홈 링크 */
+body>div[align="center"]:first-of-type table td a {
+	color: rgba(255, 255, 255, 0.9) !important;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 6px 14px;
+	border-radius: 20px;
+	border: 1.5px solid rgba(255, 255, 255, 0.4);
+	transition: all var(--t);
+	display: inline-block;
+}
+
+body>div[align="center"]:first-of-type table td a:hover {
+	background: rgba(255, 255, 255, 0.2);
+	color: #fff !important;
+	border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* 헤더 아래 hr 숨기기 */
+body>div[align="center"]:first-of-type+hr {
+	display: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MENU.JSP  →  div[align="right"] + table (회원가입, 코드그룹관리)
+   ═══════════════════════════════════════════════════════════ */
+div[align="right"] {
+	background: rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur(8px);
+	padding: 10px 32px;
+	border-bottom: 1px solid var(--pink-border);
+	margin: 0;
+}
+
+div[align="right"] table {
+	margin-left: auto;
+	border: none !important;
+	background: transparent;
+	border-collapse: collapse;
+}
+
+div[align="right"] table tr {
+	background: transparent !important;
+}
+
+div[align="right"] table td {
+	padding: 4px 4px !important;
+	border: none !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	vertical-align: middle;
+}
+
+/* 메뉴 링크들 */
+div[align="right"] table td a {
+	color: var(--pink-dark) !important;
+	font-size: 13px;
+	font-weight: 600;
+	padding: 6px 14px;
+	border-radius: 20px;
+	border: 1.5px solid var(--pink-soft);
+	background: var(--white);
+	display: inline-block;
+	transition: all var(--t);
+	white-space: nowrap;
+}
+
+div[align="right"] table td a:hover {
+	background: var(--pink-grad);
+	color: #fff !important;
+	border-color: transparent;
+	box-shadow: 0 4px 12px rgba(255, 117, 140, 0.3);
+	transform: translateY(-1px);
+}
+
+/* 메뉴 아래 hr 숨기기 */
+div[align="right"]+hr {
+	display: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CODEGROUP.JSP  →  div[align="center"] (h2 + a + table)
+   ═══════════════════════════════════════════════════════════ */
+body>div[align="center"]:not(:first-of-type) {
+	max-width: 900px;
+	margin: 44px auto 60px;
+	padding: 0 24px;
+	text-align: left;
+	position: relative;
+}
+
+/* h2 타이틀 */
+body>div[align="center"]:not(:first-of-type)>h2 {
+	font-size: 22px;
+	font-weight: 700;
+	color: var(--pink-dark);
+	letter-spacing: -0.3px;
+	margin-bottom: 28px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+body>div[align="center"]:not(:first-of-type)>h2::before {
+	content: '🌸';
+	font-size: 20px;
+}
+
+body>div[align="center"]:not(:first-of-type)>h2::after {
+	content: '🌸';
+	font-size: 20px;
+}
+
+/* 새로만들기 버튼 */
+body>div[align="center"]:not(:first-of-type)>a {
+	position: absolute;
+	top: 0;
+	right: 24px;
+	display: inline-flex !important;
+	align-items: center;
+	gap: 5px;
+	font-size: 13px !important;
+	font-weight: 700 !important;
+	padding: 10px 22px !important;
+	background: var(--pink-grad) !important;
+	color: #fff !important;
+	border-radius: 50px !important;
+	box-shadow: 0 6px 18px rgba(255, 117, 140, 0.35) !important;
+	transition: all var(--t) !important;
+	border: none !important;
+}
+
+body>div[align="center"]:not(:first-of-type)>a::before {
+	content: '✦ ';
+	font-size: 11px;
+}
+
+body>div[align="center"]:not(:first-of-type)>a:hover {
+	transform: translateY(-2px) !important;
+	box-shadow: 0 10px 24px rgba(255, 117, 140, 0.45) !important;
+}
+
+/* ─── 메인 테이블 ─── */
+body>div[align="center"]:not(:first-of-type)>table {
+	width: 100% !important;
+	border-collapse: separate !important;
+	border-spacing: 0 10px !important;
+	border: none !important;
+	background: transparent !important;
+	margin-top: 8px;
+}
+
+/* 헤더 th */
+body>div[align="center"]:not(:first-of-type)>table tr:first-child {
+	background: transparent !important;
+}
+
+body>div[align="center"]:not(:first-of-type)>table tr:first-child th {
+	font-size: 11px !important;
+	font-weight: 700 !important;
+	color: var(--pink) !important;
+	padding: 6px 20px 14px !important;
+	text-align: center !important;
+	letter-spacing: 0.08em !important;
+	text-transform: uppercase !important;
+	border: none !important;
+	background: transparent !important;
+}
+
+/* 데이터 행 */
+body>div[align="center"]:not(:first-of-type)>table tr:not(:first-child) td
+	{
+	background: var(--white) !important;
+	border: none !important;
+	border-top: 1px solid var(--pink-pale) !important;
+	border-bottom: 2px solid var(--pink-border) !important;
+	box-shadow: 0 4px 14px rgba(255, 133, 162, 0.1) !important;
+	padding: 18px 20px !important;
+	transition: all var(--t) !important;
+}
+
+body>div[align="center"]:not(:first-of-type)>table tr:not(:first-child):hover td
+	{
+	background: var(--pink-pale) !important;
+	box-shadow: 0 8px 24px rgba(255, 133, 162, 0.2) !important;
+	transform: translateY(-1px);
+}
+
+/* 양 끝 둥글게 */
+body>div[align="center"]:not(:first-of-type)>table tr:not(:first-child) td:first-child
+	{
+	border-left: 1px solid var(--pink-pale) !important;
+	border-radius: 16px 0 0 16px !important;
+}
+
+body>div[align="center"]:not(:first-of-type)>table tr:not(:first-child) td:last-child
+	{
+	border-right: 1px solid var(--pink-pale) !important;
+	border-radius: 0 16px 16px 0 !important;
+}
+
+/* 코드 셀 */
+body>div[align="center"]:not(:first-of-type)>table td[align="center"] {
+	font-size: 12px !important;
+	font-weight: 700 !important;
+	color: var(--pink-dark) !important;
+	letter-spacing: 0.06em !important;
+	text-align: center !important;
+}
+
+/* 이름 셀 */
+body>div[align="center"]:not(:first-of-type)>table td[align="left"] {
+	text-align: left !important;
+	font-weight: 600 !important;
+	color: var(--text) !important;
+}
+
+body>div[align="center"]:not(:first-of-type)>table td[align="left"] a {
+	color: var(--text) !important;
+	display: inline-flex !important;
+	align-items: center;
+	transition: all var(--t);
+}
+
+body>div[align="center"]:not(:first-of-type)>table td[align="left"] a::after
+	{
+	content: ' 💕';
+	opacity: 0;
+	margin-left: 4px;
+	transform: translateX(-6px);
+	transition: all var(--t);
+	display: inline-block;
+}
+
+body>div[align="center"]:not(:first-of-type)>table td[align="left"] a:hover
+	{
+	color: var(--pink-dark) !important;
+}
+
+body>div[align="center"]:not(:first-of-type)>table td[align="left"] a:hover::after
+	{
+	opacity: 1;
+	transform: translateX(4px);
+}
+
+/* 빈 목록 */
+body>div[align="center"]:not(:first-of-type)>table td[colspan] {
+	padding: 60px !important;
+	text-align: center !important;
+	color: var(--text-light) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════ */
+.site-footer, body>div:last-of-type {
+	text-align: center;
+	padding: 28px;
+	color: var(--text-light);
+	font-size: 12px;
+	margin-top: 40px;
+	border-top: 1px solid var(--pink-border);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   input_table (기존 유지)
+   ═══════════════════════════════════════════════════════════ */
+table.input_table {
+	margin: 0 auto;
+	width: 100%;
+	border-collapse: separate !important;
+	border-spacing: 0 8px !important;
+	border: none !important;
+	background: transparent;
+}
+
+table.input_table th {
+	background: transparent !important;
+	color: var(--pink) !important;
+	font-size: 13px;
+	font-weight: 700;
+	padding: 10px 20px !important;
+	border: none !important;
+	text-align: left;
+	white-space: nowrap;
+	width: 160px;
+	vertical-align: middle;
+}
+
+table.input_table td {
+	background: var(--white) !important;
+	padding: 12px 16px !important;
+	border: none !important;
+	border-radius: 12px !important;
+	box-shadow: 0 2px 10px rgba(255, 133, 162, 0.1) !important;
+	vertical-align: middle;
+}
+
+/* 인풋 */
+input[type="text"], input[type="password"], input[type="email"], input[type="number"],
+	select, textarea {
+	width: 100%;
+	padding: 10px 15px;
+	border: 1.5px solid var(--pink-border) !important;
+	border-radius: 12px !important;
+	font-size: 15px;
+	font-family: inherit;
+	color: var(--text);
+	background: var(--white);
+	transition: border-color var(--t), box-shadow var(--t);
+	outline: none !important;
+	appearance: none;
+}
+
+input:focus, select:focus, textarea:focus {
+	border-color: var(--pink) !important;
+	box-shadow: 0 0 0 3px rgba(255, 133, 162, 0.15) !important;
+}
+
+input::placeholder, textarea::placeholder {
+	color: var(--text-light);
+}
+
+/* 버튼 */
+input[type="submit"], button[type="submit"], input[type="button"],
+	button[type="button"] {
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: 700;
+	padding: 11px 28px;
+	border-radius: 50px;
+	border: none !important;
+	cursor: pointer;
+	background: var(--pink-grad) !important;
+	color: #fff !important;
+	box-shadow: 0 6px 18px rgba(255, 117, 140, 0.3);
+	transition: all var(--t);
+}
+
+input[type="submit"]:hover, button[type="submit"]:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 24px rgba(255, 117, 140, 0.4);
+}
+
+/* 반응형 */
+@media ( max-width : 768px) {
+	body>div[align="center"]:not(:first-of-type) {
+		padding: 0 14px;
+		margin: 24px auto 40px;
+	}
+	body>div[align="center"]:not(:first-of-type)>a {
+		position: static;
+		display: block !important;
+		text-align: center;
+		margin-bottom: 14px;
+	}
+	div[align="right"] {
+		padding: 10px 16px;
+	}
+}
