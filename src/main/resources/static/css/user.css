@@ -1,0 +1,363 @@
+@charset "UTF-8";
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap')
+	;
+
+:root {
+	--pink: #FF85A2;
+	--pink-dark: #E8607F;
+	--pink-deep: #C94B6A;
+	--pink-soft: #FFD6E0;
+	--pink-pale: #FFF0F4;
+	--pink-bg: #FFF5F8;
+	--pink-border: #FFDAE3;
+	--pink-grad: linear-gradient(135deg, #FF758C 0%, #FF9BB5 100%);
+	--text: #3D2B35;
+	--text-sub: #997B87;
+	--text-light: #C4A8B5;
+	--white: #FFFFFF;
+	--t: 0.2s ease;
+}
+
+/* ─── Reset & Base ─── */
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Noto Sans KR', -apple-system, sans-serif;
+	background: var(--pink-bg);
+	background-image: radial-gradient(circle at 10% 10%, rgba(255, 133, 162, 0.1)
+		0%, transparent 45%),
+		radial-gradient(circle at 90% 85%, rgba(255, 182, 193, 0.12) 0%,
+		transparent 45%);
+	color: var(--text);
+	font-size: 14px;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+}
+
+a {
+	text-decoration: none !important;
+	transition: color var(--t);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════════════════════ */
+body>div[align="center"]:first-of-type {
+	background: var(--pink-grad);
+	padding: 0 32px;
+	margin: 0;
+	max-width: 100%;
+	box-shadow: 0 4px 20px rgba(255, 117, 140, 0.25);
+}
+
+body>div[align="center"]:first-of-type table {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	border: none !important;
+	background: transparent;
+	border-collapse: collapse;
+}
+
+body>div[align="center"]:first-of-type table tr {
+	background: transparent !important;
+}
+
+body>div[align="center"]:first-of-type table td {
+	padding: 16px 8px !important;
+	border: none !important;
+	background: transparent !important;
+	box-shadow: none !important;
+}
+
+body>div[align="center"]:first-of-type table td a {
+	color: rgba(255, 255, 255, 0.9) !important;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 6px 14px;
+	border-radius: 20px;
+	border: 1.5px solid rgba(255, 255, 255, 0.4);
+	transition: all var(--t);
+	display: inline-block;
+}
+
+body>div[align="center"]:first-of-type table td a:hover {
+	background: rgba(255, 255, 255, 0.2);
+	color: #fff !important;
+	border-color: rgba(255, 255, 255, 0.7);
+}
+
+body>div[align="center"]:first-of-type+hr {
+	display: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MENU
+   ═══════════════════════════════════════════════════════════ */
+div[align="right"] {
+	background: rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur(8px);
+	padding: 10px 32px;
+	border-bottom: 1px solid var(--pink-border);
+	margin: 0;
+}
+
+div[align="right"] table {
+	margin-left: auto;
+	border: none !important;
+	background: transparent;
+	border-collapse: collapse;
+}
+
+div[align="right"] table tr {
+	background: transparent !important;
+}
+
+div[align="right"] table td {
+	padding: 4px !important;
+	border: none !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	vertical-align: middle;
+}
+
+div[align="right"] table td a {
+	color: var(--pink-dark) !important;
+	font-size: 13px;
+	font-weight: 600;
+	padding: 6px 14px;
+	border-radius: 20px;
+	border: 1.5px solid var(--pink-soft);
+	background: var(--white);
+	display: inline-block;
+	transition: all var(--t);
+	white-space: nowrap;
+}
+
+div[align="right"] table td a:hover {
+	background: var(--pink-grad);
+	color: #fff !important;
+	border-color: transparent;
+	box-shadow: 0 4px 12px rgba(255, 117, 140, 0.3);
+	transform: translateY(-1px);
+}
+
+div[align="right"]+hr {
+	display: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   회원가입 메인 컨테이너
+   ═══════════════════════════════════════════════════════════ */
+body>div[align="center"]:not(:first-of-type) {
+	max-width: 560px;
+	margin: 60px auto 60px;
+	padding: 48px 48px 40px;
+	text-align: center;
+	background: var(--white);
+	border-radius: 28px;
+	border: 1px solid var(--pink-border);
+	box-shadow: 0 8px 40px rgba(255, 133, 162, 0.13);
+	position: relative;
+	overflow: hidden;
+}
+
+/* 배경 장식 */
+body>div[align="center"]:not(:first-of-type)::before {
+	content: '';
+	position: absolute;
+	top: -50px;
+	right: -50px;
+	width: 180px;
+	height: 180px;
+	background: radial-gradient(circle, rgba(255, 133, 162, 0.1) 0%,
+		transparent 70%);
+	border-radius: 50%;
+	pointer-events: none;
+}
+
+/* h2 타이틀 */
+body>div[align="center"]:not(:first-of-type)>h2 {
+	font-size: 22px;
+	font-weight: 700;
+	color: var(--pink-dark);
+	letter-spacing: -0.3px;
+	margin-bottom: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+body>div[align="center"]:not(:first-of-type)>h2::before {
+	content: '🌸';
+	font-size: 20px;
+}
+
+body>div[align="center"]:not(:first-of-type)>h2::after {
+	content: '🌸';
+	font-size: 20px;
+}
+
+/* ─── 회원가입 테이블 ─── */
+table.user_table {
+	width: 100%;
+	border-collapse: separate !important;
+	border-spacing: 0 10px !important;
+	border: none !important;
+	background: transparent;
+	margin-bottom: 8px;
+	text-align: left;
+}
+
+table.user_table tr {
+	background: transparent !important;
+}
+
+/* 라벨 셀 */
+table.user_table td:first-child {
+	width: 90px;
+	font-size: 13px;
+	font-weight: 700;
+	color: var(--pink-dark);
+	padding: 0 12px 0 4px !important;
+	vertical-align: middle;
+	white-space: nowrap;
+	border: none !important;
+	background: transparent !important;
+	box-shadow: none !important;
+}
+
+/* 인풋 셀 */
+table.user_table td:nth-child(2) {
+	padding: 0 !important;
+	border: none !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	vertical-align: middle;
+}
+
+/* 에러 셀 */
+table.user_table td:nth-child(3) {
+	padding: 0 8px !important;
+	border: none !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	vertical-align: middle;
+	font-size: 12px;
+}
+
+table.user_table td:nth-child(3) font[color="red"] {
+	color: var(--pink-deep) !important;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+/* ─── 인풋 공통 ─── */
+input[type="text"], input[type="password"], input[type="email"], input[type="number"],
+	select, textarea {
+	width: 100%;
+	padding: 10px 15px;
+	border: 1.5px solid var(--pink-border) !important;
+	border-radius: 12px !important;
+	font-size: 14px;
+	font-family: inherit;
+	color: var(--text);
+	background: var(--white);
+	transition: border-color var(--t), box-shadow var(--t);
+	outline: none !important;
+	appearance: none;
+}
+
+input:focus, select:focus, textarea:focus {
+	border-color: var(--pink) !important;
+	box-shadow: 0 0 0 3px rgba(255, 133, 162, 0.15) !important;
+}
+
+input::placeholder, textarea::placeholder {
+	color: var(--text-light);
+}
+
+/* select 화살표 */
+select {
+	background-image:
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23FF85A2' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 14px center;
+	padding-right: 36px !important;
+	cursor: pointer;
+}
+
+/* ─── 버튼 영역 ─── */
+body>div[align="center"]:not(:first-of-type)>div {
+	display: flex;
+	justify-content: center;
+	gap: 12px;
+	margin-top: 28px;
+}
+
+button[type="submit"], button[type="button"], button {
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: 700;
+	padding: 12px 32px;
+	border-radius: 50px;
+	border: none !important;
+	cursor: pointer;
+	background: var(--pink-grad) !important;
+	color: #fff !important;
+	box-shadow: 0 6px 18px rgba(255, 117, 140, 0.3);
+	transition: all var(--t);
+	letter-spacing: 0.02em;
+}
+
+button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 24px rgba(255, 117, 140, 0.4);
+}
+
+/* 목록 버튼 - 아웃라인 스타일 */
+#btnList {
+	background: var(--white) !important;
+	color: var(--pink-dark) !important;
+	border: 1.5px solid var(--pink-soft) !important;
+	box-shadow: none;
+}
+
+#btnList:hover {
+	background: var(--pink-pale) !important;
+	box-shadow: 0 4px 12px rgba(255, 133, 162, 0.15);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════ */
+body>div:last-of-type {
+	text-align: center;
+	padding: 28px;
+	color: var(--text-light);
+	font-size: 12px;
+	margin-top: 40px;
+	border-top: 1px solid var(--pink-border);
+}
+
+/* ─── 반응형 ─── */
+@media ( max-width : 768px) {
+	body>div[align="center"]:not(:first-of-type) {
+		margin: 24px 16px;
+		padding: 32px 20px;
+	}
+	table.user_table td:first-child {
+		width: 70px;
+		font-size: 12px;
+	}
+	div[align="right"] {
+		padding: 10px 16px;
+	}
+}
