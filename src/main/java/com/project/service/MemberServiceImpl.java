@@ -63,4 +63,13 @@ public class MemberServiceImpl implements MemberService {
 		}
 		return count;
 	}
+
+	@Transactional
+	@Override
+	public int remove(Member member) throws Exception {
+		// 회원 권한 삭제 
+		mapper.deleteAuth(member); 
+		 
+		return mapper.remove(member);
+	}
 }
