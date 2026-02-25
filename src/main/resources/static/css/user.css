@@ -195,16 +195,6 @@ body>div[align="center"]:not(:first-of-type)>h2 {
 	gap: 10px;
 }
 
-body>div[align="center"]:not(:first-of-type)>h2::before {
-	content: '🌸';
-	font-size: 20px;
-}
-
-body>div[align="center"]:not(:first-of-type)>h2::after {
-	content: '🌸';
-	font-size: 20px;
-}
-
 /* ─── 회원가입 테이블 ─── */
 table.user_table {
 	width: 100%;
