@@ -67,9 +67,28 @@ public class MemberServiceImpl implements MemberService {
 	@Transactional
 	@Override
 	public int remove(Member member) throws Exception {
-		// 회원 권한 삭제 
-		mapper.deleteAuth(member); 
-		 
+		// 회원 권한 삭제
+		mapper.deleteAuth(member);
+
 		return mapper.remove(member);
+	}
+
+	@Override
+	public int countAll() throws Exception {
+		return mapper.countAll();
+	}
+
+	@Transactional
+	@Override
+	public void setupAdmin(Member member) throws Exception {
+		int count = mapper.register(member);
+
+		if (count != 0) {
+			// 회원 권한 생성
+			MemberAuth memberAuth = new MemberAuth();
+			memberAuth.setUserNo(member.getUserNo());
+			memberAuth.setAuth("ROLE_ADMIN");
+			mapper.createAuth(memberAuth);
+		}
 	}
 }
