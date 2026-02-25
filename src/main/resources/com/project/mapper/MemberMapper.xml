@@ -76,6 +76,10 @@
 		WHERE user_no = #{userNo}
 	</update>
 
+	<!-- 삭제 처리 -->
+	<delete id="remove">
+		DELETE FROM member WHERE user_no = #{userNo}
+	</delete>
 </mapper>
 
 
