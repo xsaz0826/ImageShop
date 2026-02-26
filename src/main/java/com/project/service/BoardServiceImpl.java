@@ -20,4 +20,13 @@ public class BoardServiceImpl implements BoardService {
 		return mapper.register(board);
 	}
 
+	@Override
+	public List<Board> list() throws Exception {
+		return mapper.list();
+	}
+
+	@Override
+	public Board read(Board board) throws Exception {
+		return mapper.read(board);
+	}
 }
