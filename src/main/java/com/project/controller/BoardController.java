@@ -1,5 +1,8 @@
 package com.project.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -12,14 +15,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.project.common.domain.CodeLabelValue;
 import com.project.common.domain.PageRequest;
 import com.project.common.domain.Pagination;
 import com.project.common.security.domain.CustomUser;
 import com.project.domain.Board;
 import com.project.domain.Member;
 import com.project.service.BoardService;
-
-import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @RequestMapping("/board")
@@ -69,9 +71,21 @@ public class BoardController {
 		// 현재페이지 4, 한페이지당 보여주는 갯수 10
 		pagination.setPageRequest(pageRequest);
 		// 리스트 전체 갯수를 셋팅하고, 다시 계산한다.
-		pagination.setTotalCount(service.count());
+		pagination.setTotalCount(service.count(pageRequest));
 		// 화면 페이지를 보여주는 정보를 제공한다.
 		model.addAttribute("pagination", pagination);
+
+		// 검색 유형의 코드명과 코드값을 정의한다.
+		List<CodeLabelValue> searchTypeCodeValueList = new ArrayList<CodeLabelValue>();
+		searchTypeCodeValueList.add(new CodeLabelValue("n", "---"));
+		searchTypeCodeValueList.add(new CodeLabelValue("t", "Title"));
+		searchTypeCodeValueList.add(new CodeLabelValue("c", "Content"));
+		searchTypeCodeValueList.add(new CodeLabelValue("w", "Writer"));
+		searchTypeCodeValueList.add(new CodeLabelValue("tc", "Title OR Content"));
+		searchTypeCodeValueList.add(new CodeLabelValue("cw", "Content OR Writer"));
+		searchTypeCodeValueList.add(new CodeLabelValue("tcw", "Title OR Content OR Writer"));
+
+		model.addAttribute("searchTypeCodeValueList", searchTypeCodeValueList);
 	}
 
 	// 게시글 상세 페이지
