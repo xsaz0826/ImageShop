@@ -10,4 +10,6 @@ public interface NoticeService {
 
 	public List<Notice> list() throws Exception;
 
+	public Notice read(Notice notice) throws Exception;
+
 }

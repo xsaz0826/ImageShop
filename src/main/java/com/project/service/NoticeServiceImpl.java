@@ -10,6 +10,7 @@ import com.project.mapper.NoticeMapper;
 
 @Service
 public class NoticeServiceImpl implements NoticeService {
+
 	@Autowired
 	private NoticeMapper mapper;
 
@@ -21,5 +22,10 @@ public class NoticeServiceImpl implements NoticeService {
 	@Override
 	public List<Notice> list() throws Exception {
 		return mapper.list();
+	}
+
+	@Override
+	public Notice read(Notice notice) throws Exception {
+		return mapper.read(notice);
 	}
 }
