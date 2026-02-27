@@ -14,6 +14,8 @@
   		<td width="120"><a href="/board/list">회원 게시판 리스트</a></td>
   		<!-- 공지사항 리스트 --> 
 		<td width="120"><a href="/notice/list"><spring:message code="menu.notice.member" /></a></td>
+		<!-- 상품 리스트 --> 
+		<td width="120"><a href="/item/list">상품 리스트</a></td>
    </sec:authorize>
     
    <!-- 인증을 했을 때 메뉴 (인가: 관리자, 회원, 매니저 --> 
@@ -29,7 +31,9 @@
   			 <!-- 회원 게시판 리스트 --> 
   			 <td width="120"><a href="/board/list">회원 게시판 리스트</a></td>
   			 <!-- 공지사항 리스트 --> 
-			<td width="120"><a href="/notice/list"><spring:message code="menu.notice.member" /></a></td>
+			 <td width="120"><a href="/notice/list"><spring:message code="menu.notice.member" /></a></td>
+  			 <!-- 상품 리스트 --> 
+			 <td width="120"><a href="/item/list">상품 리스트</a></td>
    		</sec:authorize>
    		
 	   <!-- 인증완료(인가: 회원)일 때 들어갈 메뉴 --> 
@@ -38,6 +42,8 @@
   			<td width="120"><a href="/board/list">회원 게시판 리스트</a></td>
   			<!-- 공지사항 리스트 --> 
 			<td width="120"><a href="/notice/list"><spring:message code="menu.notice.member" /></a></td>
+			<!-- 상품 리스트 --> 
+			<td width="120"><a href="/item/list">상품 리스트</a></td>
    		</sec:authorize>
    
    </sec:authorize> 
