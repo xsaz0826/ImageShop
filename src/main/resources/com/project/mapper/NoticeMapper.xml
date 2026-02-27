@@ -21,4 +21,14 @@
 		SELECT notice_no, title, content,
 		reg_date FROM notice WHERE notice_no = #{noticeNo}
 	</select>
+
+	<!-- 공지사항 수정 처리 -->
+	<update id="modify">
+		UPDATE notice SET title =#{title}, content =#{content} WHERE notice_no = #{noticeNo}
+	</update>
+
+	<!-- 공지사항 삭제 처리 -->
+	<delete id="remove">
+		DELETE FROM notice WHERE notice_no = #{noticeNo}
+	</delete>
 </mapper>

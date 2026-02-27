@@ -28,4 +28,14 @@ public class NoticeServiceImpl implements NoticeService {
 	public Notice read(Notice notice) throws Exception {
 		return mapper.read(notice);
 	}
+
+	@Override
+	public int modify(Notice notice) throws Exception {
+		return mapper.modify(notice);
+	}
+
+	@Override
+	public int remove(Notice notice) throws Exception {
+		return mapper.remove(notice);
+	}
 }
